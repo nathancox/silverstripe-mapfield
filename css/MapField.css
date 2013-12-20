@@ -1,0 +1,28 @@
+.mapfield-map {
+	margin-top:8px;
+	border:1px solid #B3B3B3;
+
+	max-width:500px;
+	min-width:200px;
+}
+
+
+.mapfield-search-container {
+	max-width:445px;
+	
+	padding-right:69px;
+	position:relative;
+}
+
+input.mapfield-address {
+/*	margin-right:68px !important;	
+	max-width:440px !important;*/
+}
+
+
+.mapfield-search-button {
+	width:65px;
+	position:absolute;
+		right:0;
+		top:1px;
+}
