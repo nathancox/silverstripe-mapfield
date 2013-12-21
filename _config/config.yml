@@ -3,7 +3,17 @@ Name: mapfield
 Before: 'mysite/*'
 ---
 GoogleMap:
+# default width used for static maps, in pixels
   default_width: 300
+
+# default width used for static maps, in pixels
   default_height: 300
+
+# include the google maps API script on the front end
   include_api_script: true
+
+# include the mapfield script for the front end
   include_frontend_script: true
+
+# the optional Google Maps API key
+  api_key: false

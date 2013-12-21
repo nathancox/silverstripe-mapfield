@@ -60,8 +60,8 @@ class MapField extends FormField {
 		Requirements::css($dir . '/css/MapField.css');
 
 		$url = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=mapFieldInit';
-		if (GoogleMap::$api_key) {
-			$url .= '&key=' . GoogleMap::$api_key;
+		if (Config::inst()->get('GoogleMap', 'api_key')) {
+			$url .= '&key=' . Config::inst()->get('GoogleMap', 'api_key');
 		}
 		Requirements::javascript($url, 'GoogleMaps');
 
@@ -294,7 +294,7 @@ class MapField extends FormField {
 
 
 	function APIKey() {
-		return GoogleMap::$api_key;
+		return Config::inst()->get('GoogleMap', 'api_key');
 	}
 
 

@@ -175,8 +175,9 @@ class GoogleMap extends DataObject {
 	 */
 	static function api_script_src() {
 		$url = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false';
-		if (GoogleMap::$api_key) {
-			$url .= '&key=' . GoogleMap::$api_key;
+		
+		if (Config::inst()->get('GoogleMap', 'api_key')) {
+			$url .= '&key=' . Config::inst()->get('GoogleMap', 'api_key');
 		}
 		return $url;
 	}
