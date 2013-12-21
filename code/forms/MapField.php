@@ -8,8 +8,8 @@ class MapField extends FormField {
 	public $mapObjectClass = 'GoogleMap';
 
 	public $defaults = array(
-		'CenterLat' => -41.402,
-		'CenterLng' => 173.425,
+		'CenterLat' => -42.058,
+		'CenterLng' => 170.173,
 		'Zoom' => 4,
 		'MapType' => 'roadmap',
 		'Address' => ''
@@ -30,11 +30,16 @@ class MapField extends FormField {
 	private $mapObject = null;
 	private $mapData = array();
 
+	/**
+	 * Disable storing the address.  This stops the map link from working
+	 * @var boolean
+	 */
 	public $storeAddress = true;
 
+	// not fully implemented
 	private $fieldAction = 'update';
 
-	public $addressFieldPlaceholder = 'enter address to place marker on';
+	public $addressFieldPlaceholder = 'enter address to place marker on the map';
 
 	/**
 	 * @param string $name      The name of the field
@@ -71,11 +76,16 @@ class MapField extends FormField {
 			if(($record instanceof DataObject) && $record->hasMethod($this->getName())) {
 				$data = $record->{$this->getName()}();
 				if ($data instanceof $this->mapObjectClass) {
-					$this->mapObject = $data;
-					$this->value = $data->ID;
-					if ($data->ID == 0) {
-						$this->mapObject->update($this->defaults);
+					if ($this->mapObject && $data->ID == 0) {
+						$this->value = $this->mapObject->ID;
+					} else {
+						$this->mapObject = $data;
+						$this->value = $data->ID;
+						if ($data->ID == 0) {
+							$this->mapObject->update($this->defaults);
+						}
 					}
+
 				} else {
 					user_error("MapField::setValue() passed a ".$data->ClassName, E_USER_WARNING);
 				}
@@ -173,7 +183,10 @@ class MapField extends FormField {
 	}
 
 
-
+	/**
+	 * Set the placeholder text for the address search field
+	 * @param string
+	 */
 	function setAddressPlaceholder($text) {
 		$this->addressFieldPlaceholder = $text;
 	}

@@ -19,7 +19,9 @@ class GoogleMap extends DataObject {
 	);
 
 	static $defaults = array(
-		'MarkerColour' => 'red'
+		'MarkerColour' => 'red',
+		'MapType' => 'roadmap',
+		'Zoom' => 4
 	);
 
 	/**
