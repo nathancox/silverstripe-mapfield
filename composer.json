@@ -1,6 +1,6 @@
 {
 	"name": "nathancox/mapfield",
-	"description": "A super simple convenience module for displaying text and textfields inline in the CMS",
+	"description": "A field for managing a Google Map on a page or dataobject",
 	"type": "silverstripe-module",
 	"homepage": "https://github.com/nathancox/silverstripe-mapfield",
 	"keywords": ["silverstripe", "google maps", "googlemaps", "map", "cms", "formfield"],
