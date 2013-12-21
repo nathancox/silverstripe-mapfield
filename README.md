@@ -3,8 +3,8 @@ SilverStripe MapField
 
 This module gives the ability to manage a google map attached to a page or dataobject in SilverStripe.  It as two main parts:
 
-# A GoogleMap dataobject that stores all the map's properties (center, marker, zoom etc)
-# The MapField form field for creating and editing a GoogleMap
+* A GoogleMap dataobject that stores all the map's properties (center, marker, zoom etc)
+* The MapField form field for creating and editing a GoogleMap
 
 
 Maintainer Contacts
@@ -28,13 +28,7 @@ Installation Instructions
 Usage Overview
 --------------
 
-Using MapField in getCMSFields:
-
-```php
-	
-	
-
-```
+See https://github.com/nathancox/silverstripe-mapfield/wiki for instructions and examples.
 
 ![example mapfield](http://static.flyingmonkey.co.nz/github/silverstripe-mapfield/mapfield-1.png)
 
