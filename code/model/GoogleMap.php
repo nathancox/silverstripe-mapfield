@@ -71,7 +71,7 @@ class GoogleMap extends DataObject {
 			if (!$height) {
 				$height = $width;
 			}
-			
+
 		} else {
 			$width = self::$default_width;
 			$height = self::$default_height;
@@ -87,11 +87,11 @@ class GoogleMap extends DataObject {
 			if ($this->MarkerColour) {
 				$markerParam[] = 'color:'.$this->MarkerColour;
 			}
-			
+
 			if ($this->MarkerLabel) {
 				$markerParam[] = 'label:'.$this->MarkerLabel;
 			}
-				
+
 			$markerParam[] = $this->MarkerLat.','.$this->MarkerLng;
 
 			$params[] = 'markers=' . implode('%7C', $markerParam);
@@ -151,7 +151,7 @@ class GoogleMap extends DataObject {
 	 *
 	 * GoogleMap:
 	 *   include_frontend_script: false
-	 * 
+	 *
 	 */
 	static function include_scripts() {
 		if (Config::inst()->get('GoogleMap', 'include_api_script')) {
@@ -175,7 +175,7 @@ class GoogleMap extends DataObject {
 	 */
 	static function api_script_src() {
 		$url = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false';
-		
+
 		if (Config::inst()->get('GoogleMap', 'api_key')) {
 			$url .= '&key=' . Config::inst()->get('GoogleMap', 'api_key');
 		}
