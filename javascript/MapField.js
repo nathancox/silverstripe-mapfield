@@ -28,7 +28,7 @@
 				};
 
 				var mapElement = this.find('.mapfield-map');
-				
+
 				var map = new google.maps.Map(mapElement[0], options);
 
 
@@ -42,7 +42,7 @@
 					markerLat = 0;
 					markerLng = 0;
 				}
-					
+
 				var $marker = this.makeMarker(markerLat, markerLng);
 
 				google.maps.event.addListener(map, 'click', function(e) {
@@ -105,7 +105,7 @@
 					  		$field.setFieldValue('Search', address);
 					  		$field.setFieldValue('Address', address);
 					  	}
-					  	
+
 					  }
 					});
 				}
@@ -139,7 +139,7 @@
 							} else {
 								$field.centerOnMarker();
 							}
-							
+
 						}
 
 					});

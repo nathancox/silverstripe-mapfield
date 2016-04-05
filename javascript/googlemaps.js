@@ -32,9 +32,9 @@ var googleMaps = {
 	    zoom: settings.Zoom*1,
 	    center: new google.maps.LatLng(settings.CenterLat, settings.CenterLng)
 	  }
-	  
+
 	  var map = new google.maps.Map(el, mapOptions);
-	  
+
 	  var marker = new google.maps.Marker({
       position: new google.maps.LatLng(settings.MarkerLat, settings.MarkerLng),
       map: map,

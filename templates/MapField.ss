@@ -9,7 +9,7 @@
 	<% else %>
 	$Field
 	<% end_if %>
-	
+
 	<% end_loop %>
 	<div class="mapfield-map" style='$MapCSS'></div>
 </div>

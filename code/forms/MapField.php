@@ -126,7 +126,7 @@ class MapField extends FormField {
 				return $mapObject;
 			}
 		}
-			
+
 		$object = $objectClass::create();
 		$object->update($this->defaults);
 
@@ -197,7 +197,7 @@ class MapField extends FormField {
 
 	/**
 	 * Set the size of the map in the CMS.   Each dimension can be either a single number or an array of (min, max)
-	 * @param int|array $width  
+	 * @param int|array $width
 	 * @param int|array $height [description]
 	 */
 	function setMapSize($width, $height) {
@@ -206,7 +206,7 @@ class MapField extends FormField {
 		} else {
 			$this->mapWidth = array($width, $width);
 		}
-		
+
 		if (is_array($height)) {
 			$this->mapHeight = $height;
 		} else {
